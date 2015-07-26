@@ -46,9 +46,7 @@ public class BukkitLoader extends JavaPlugin implements Listener{
         saveDefaultConfig();
         updateDelay = getConfig().getLong("Settings.checkDelay") * 60 * 20;
 
-        if (getConfig().getBoolean("Settings.AutoUpdate")) {
-            updater = new Updater(this, 75086, this.getFile(), Updater.UpdateType.DEFAULT, false);
-            getLogger().info("Update Status: " + updater.getResult());
+        
         }
 
         getLogger().info("Checking status");
@@ -58,13 +56,7 @@ public class BukkitLoader extends JavaPlugin implements Listener{
         getLogger().info("Starting checks every " + (updateDelay/(60*20)) + " minutes!");
         startStatusChecker();
 
-        try {
-            Metrics metrics = new Metrics(this);
-            metrics.start();
-        } catch (IOException e) {
-            getLogger().info("Metrics Failed! D=");
-            getLogger().info("(This won't impact how the plugin works.)");
-        }
+       
     }
 
     @Override

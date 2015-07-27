@@ -1,4 +1,4 @@
-package com.github.Gamecube762.IsMinecraftDown;
+ackage com.github.Gamecube762.IsMinecraftDown;
 
 import com.github.Gamecube762.IsMinecraftDown.Events.Bukkit.AllStatusUpdatesCompletedEvent;
 import com.github.Gamecube762.IsMinecraftDown.Events.Bukkit.StatusUpdatedEvent;
@@ -49,17 +49,25 @@ public class IsMinecraftDown {
                     @Override
                     public void run() {
                         Status status = new Status(service);
+                        String serv = ChatColor.DARK_GRAY + "[SERVICE]";
+                        String updown = serv + ChatColor.YELLOW + service.name() + ChatColor.GREEN + " is now up!"
                         status.timeChecked = new Date();
 
                         try {status.statusInfo = getServiceResponce(service);}
                         catch (IOException ex) {
                             System.out.println("Could not connect to check the Service " + service.name() + "[IOException]");
                             status.updateStatus = Status.UpdateStatus.FAILED;
+                            String updown = serv + ChatColor.YELLOW + service.name() + ChatColor.RED + " is down. :("
+
                         }
 
                         status.statusLevel = status.findStatusLevel();
                         status.timeFinished = new Date();
                         status.updateStatus = Status.UpdateStatus.DONE;
+                        for (Player players : Bukkit.getOnlinePlayers()) {
+                            players.sendMessage(updown);
+
+                        }
 
                         completedCheck(Thread.currentThread(), status);
                     }

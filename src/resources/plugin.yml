@@ -1,38 +1,38 @@
 name: IsMinecraftDown
 main: com.github.Gamecube762.IsMinecraftDown.Loaders.BukkitLoader
-author: Gamecube762
+authors: [Gamecube762, GRANTSWIM4, NoneVale]
 version: 1.0.0-DEV1
-prefix: IsMcDown
+prefix: IsMojangDown
 commands:
-   IsMinecraftDown:
+   ismcd:
       description: IsMinecraftDown
       usage: /<command>
       permission: IsMcDown.command
       permission-message: You don't have <permission>
-   IsMcDwn:
+   ismojangdown:
       description: IsMinecraftDown
       usage: /<command>
       permission: IsMcDown.command
       permission-message: You don't have <permission>
-   IsMcDown:
-      description: IsMinecraftDown
+   ismcdown:
+      description: IsMinecraftDown?
       usage: /<command>
       permission: IsMcDown.command
       permission-message: You don't have <permission>
 permissions:
-   IsMcDown.command.*:
+   ismcdown.command.*:
       description: command
       default: op
       children:
        IsMcDown.command: true
        IsMcDown.command.ForceUpdateCheck: true
        IsMcDown.command.ReloadConfig: true
-   IsMcDown.command:
+   ismcd.command:
       description: command
       default: true
-   IsMcDown.command.ForceUpdateCheck:
+   ismcd.command.ForceUpdateCheck:
       description: command
       default: op
-   IsMcDown.command.ReloadConfig:
+   ismcd.command.ReloadConfig:
       description: command
       default: op

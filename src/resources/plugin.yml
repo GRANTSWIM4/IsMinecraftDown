@@ -1,9 +1,5 @@
 name: IsMinecraftDown
 main: com.github.Gamecube762.IsMinecraftDown.Loaders.BukkitLoader
-authors:
-  - Gamecube762
-  - GRANTSWIM4
-  - NoneVale
 version: 1.0.0-DEV1
 prefix: IsMojangDown
 commands:

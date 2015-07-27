@@ -14,7 +14,7 @@ commands:
     permission: IsMcDown.command
     permission-message: 'You don''t have <permission>'
   ismcdown:
-    description: 'IsMinecraftDown?'
+    description: IsMinecraftDown?
     usage: /<command>
     permission: IsMcDown.command
     permission-message: 'You don''t have <permission>'

@@ -1,38 +1,41 @@
 name: IsMinecraftDown
 main: com.github.Gamecube762.IsMinecraftDown.Loaders.BukkitLoader
-authors: [Gamecube762, GRANTSWIM4, NoneVale]
+authors:
+  - Gamecube762
+  - GRANTSWIM4
+  - NoneVale
 version: 1.0.0-DEV1
 prefix: IsMojangDown
 commands:
-   ismcd:
-      description: IsMinecraftDown
-      usage: /<command>
-      permission: IsMcDown.command
-      permission-message: You don't have <permission>
-   ismojangdown:
-      description: IsMinecraftDown
-      usage: /<command>
-      permission: IsMcDown.command
-      permission-message: You don't have <permission>
-   ismcdown:
-      description: IsMinecraftDown?
-      usage: /<command>
-      permission: IsMcDown.command
-      permission-message: You don't have <permission>
+  ismcd:
+    description: IsMinecraftDown
+    usage: /<command>
+    permission: IsMcDown.command
+    permission-message: 'You don''t have <permission>'
+  ismojangdown:
+    description: IsMinecraftDown
+    usage: /<command>
+    permission: IsMcDown.command
+    permission-message: 'You don''t have <permission>'
+  ismcdown:
+    description: 'IsMinecraftDown?'
+    usage: /<command>
+    permission: IsMcDown.command
+    permission-message: 'You don''t have <permission>'
 permissions:
-   ismcdown.command.*:
-      description: command
-      default: op
-      children:
-       IsMcDown.command: true
-       IsMcDown.command.ForceUpdateCheck: true
-       IsMcDown.command.ReloadConfig: true
-   ismcd.command:
-      description: command
-      default: true
-   ismcd.command.ForceUpdateCheck:
-      description: command
-      default: op
-   ismcd.command.ReloadConfig:
-      description: command
-      default: op
+  'ismcdown.command.*':
+    description: command
+    default: op
+    children:
+      IsMcDown.command: true
+      IsMcDown.command.ForceUpdateCheck: true
+      IsMcDown.command.ReloadConfig: true
+  ismcd.command:
+    description: command
+    default: true
+  ismcd.command.ForceUpdateCheck:
+    description: command
+    default: op
+  ismcd.command.ReloadConfig:
+    description: command
+    default: op

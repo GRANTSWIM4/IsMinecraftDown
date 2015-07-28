@@ -1,4 +1,4 @@
-ackage com.github.Gamecube762.IsMinecraftDown;
+package com.github.Gamecube762.IsMinecraftDown;
 
 import com.github.Gamecube762.IsMinecraftDown.Events.Bukkit.AllStatusUpdatesCompletedEvent;
 import com.github.Gamecube762.IsMinecraftDown.Events.Bukkit.StatusUpdatedEvent;

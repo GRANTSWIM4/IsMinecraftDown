@@ -1,3 +1,4 @@
+import com.github.Gamecube762.IsMinecraftDown.isminecraftdown;
 
 public class Message implements PluginMessageListener {
 	
@@ -14,12 +15,12 @@ public class Message implements PluginMessageListener {
 		 ByteArrayDataOutput out = ByteStreams.newDataOutput();
 	  out.writeUTF("Subchannel");
 	  out.writeUTF("Argument");
-
-	  // If you don't care about the player
-	  // Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
-	  // Else, specify them
-	  Player player = Bukkit.getPlayerExact(updown);
-
+	  for (Player player : Bukkit.getOnlinePlayers) {
+		  
+		  player.sendmessage(updown);
+		  
+		}
+	  
 	  player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
 	
 	

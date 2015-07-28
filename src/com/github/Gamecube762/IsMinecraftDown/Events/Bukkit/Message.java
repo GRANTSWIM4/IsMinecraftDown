@@ -1,18 +1,30 @@
 
-public class Message {
+public class Message implements PluginMessageListener {
 	
-	  if (args.length >= 1)
-      {
-          String updown = "";
+	
+	  public void onPluginMessageReceived(String channel, Player player, byte[] message) {
+		    if (!channel.equals("BungeeCord")) {
+		      return;
+		    }
+		    }
+		  
+		
 
-          for (String messages : args)
-          {
-              msg = msg + messages + " ";
-          }
+	if(s.contains("+"))
+		 ByteArrayDataOutput out = ByteStreams.newDataOutput();
+	  out.writeUTF("Subchannel");
+	  out.writeUTF("Argument");
 
-          for(ProxiedPlayer p : ProxyServer.getInstance().getPlayers())
-          {
-              p.sendMessage(new TextComponent(ChatColor.translateAlternateColorCodes('&', plugin.prefix + " " + ChatColor.translateAlternateColorCodes('&', msg))));
-          }
+	  // If you don't care about the player
+	  // Player player = Iterables.getFirst(Bukkit.getOnlinePlayers(), null);
+	  // Else, specify them
+	  Player player = Bukkit.getPlayerExact(updown);
+
+	  player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
+	
+	
+	
+	
+		
 
 }
